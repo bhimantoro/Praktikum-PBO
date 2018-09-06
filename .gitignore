@@ -5,3 +5,5 @@
 *.pptx
 *.zip
 *.rar
+/praktikum2/nbproject/private/
+/praktikum2/build/
