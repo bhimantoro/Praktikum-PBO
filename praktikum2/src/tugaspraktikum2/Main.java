@@ -14,13 +14,13 @@ public class Main {
 	public static void main(String[] args) {
 		Scanner batas = new Scanner(System.in);
 
-		System.out.println("Masukkan Batas Bawah : ");
+		System.out.print("Masukkan Batas Bawah : ");
 		int bawah = batas.nextInt();
 		if (bawah<2) {
-			System.out.println("Tidak Ada bilangan prima dibawah 2");
+			System.out.print("Tidak Ada bilangan prima dibawah 2");
 		}
 		else{
-			System.out.println("Masukkan Batas Atas : ");
+			System.out.print("Masukkan Batas Atas : ");
 			int atas = batas.nextInt();
 
 			for (int i = bawah; i <= atas; i++) {

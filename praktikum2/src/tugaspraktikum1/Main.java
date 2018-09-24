@@ -13,7 +13,7 @@ import java.util.Scanner;
 public class Main {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
-		System.out.println("Masukkan Jumlah Deret Fibonacci : ");
+		System.out.print("Masukkan Jumlah Deret Fibonacci : ");
 		int n = input.nextInt();
 		long fib[] = new long[n];
 
@@ -25,7 +25,7 @@ public class Main {
 		}
 
 		for (int i = 0; i < n; i++) {
-			System.out.println(fib[i] + " ");
+			System.out.print(fib[i] + " ");
 		}
 	}
 }

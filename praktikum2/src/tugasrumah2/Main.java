@@ -1,118 +1,67 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package tugasrumah2;
 import java.util.Scanner;
-
 /**
  *
  * @author suryo
  */
+public class Main{
+	public static void main(String[] args) {
+        int saldo = 200000;
+        boolean hitung = true;
+        Scanner pil = new Scanner(System.in);
+        while (hitung) {
+            System.out.println("\t\tMenu ATM\n"+
+                               "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+            System.out.println("1). Cek Saldo\t\t2). Simpan Uang\n"+
+                               "3). Ambil Uang\t\t4). Keluar\n"+
+                               "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+            System.out.print("Pilih Menu : ");
+            int menu = pil.nextInt();
 
-public class Atm {
-	int pin;
-	double saldo;
-
-	public void setPin(int password){
-		this.pin = password;
-	}
-	public void setSaldo(double saldo){
-		this.saldo = saldo;
-	}
-
-	public int getPin(){
-		return pin;
-	}
-	public double getSaldo(){
-		return saldo;
-	}
-}
-
-public class Main {
-	Scanner input = new Scanner(System.in);
-	Atm atm = new Atm();
-	double minSaldo = 50000;
-	int pil;
-
-	public static void main(String[] args){
-		Atm program = new Atm();
-		program.initSaldo(200000);
-		program.login();
-	}
-
-	public void initSaldo(double saldo){
-		atm.setSaldo(saldo);
-	}
-
-
-
-	public void menu(){
-		System.out.print
-			("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n"+
-			 "\tATM\n"+
-			 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n"+
-			 "\t>Menu Transaksi<\n"+
-			 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n"+
-			 "[1]Informasi Saldo\n"+
-			 "[2]Setor Tunai\n"+
-			 "[3]Penarikan Uang\n"+
-			 "[4]Keluar\n"+
-			 "Masukkan Pilihan : ");
-		pil = input.nextInt();
-		switch (pil) {
-			case 1:
-			{
-				infoSaldo();
-				break;
-			}
-			case 2:
-			{
-				setorTunai();
-				break;
-			}
-			case 3:
-			{
-				penarikanUang();
-				break;
-			}
-			case 4:
-			{
-				System.out.println("Terima Kasih.");
-				break;
-			}
-			default:
-				System.out.print("Pilihan Menu Salah!!!");
-				break;
-		}
-	}
-
-	public void login(){
-		int pin;
-		Atm.setPin(1234);
-		System.out.print("Masukkan pin anda : ");
-		pin = input.nextInt();
-		if (atm.getPin() == pin) {
-			menu();
-		}
-		else{
-			System.out.println("Pin Salah!!!");
-			login();
-		}
-	}
-
-	public void lihatSaldo(){
-		System.out.println("Informasi Saldo Anda : " + atm.getSaldo());
-	}
-
-	public void setorTunai(){
-
-	}
-
-	public void penarikanUang(){
-		System.out.println("");
-	}
-
-	
+            switch (menu) {
+                case 1:
+                    System.out.println("Saldo anda adalah " + saldo);
+                    System.out.println("Apakah anda ingin kembali ke menu ? (1/0)");
+                    int a = pil.nextInt();
+                    if (a == 1) {
+                        hitung = true;
+                    } else if (a == 0) {
+                        hitung = false;
+                    }
+                    break;
+                case 2:
+                    System.out.println("Masukkan jumlah yangg anda simpan =");
+                    int b = pil.nextInt();
+                    saldo += b;
+                    System.out.println("Apakah anda ingin kembali ke menu ? (1/0)");
+                    int v = pil.nextInt();
+                    if (v == 1) {
+                        hitung = true;
+                    } else if (v == 0) {
+                        hitung = false;
+                    }
+                    break;
+                case 3:
+                    System.out.println("Masukkan Jumlah uang yang anda ambil");
+                    int n = pil.nextInt();
+                    if (n > saldo) {
+                        System.out.println("Gagal, Saldo anda kurang");
+                    } else {
+                        saldo -= n;
+                        System.out.println("Saldo Anda Adalah " + saldo);
+                    }
+                    System.out.println("Apakah anda ingin kembali ke menu ? (1/0)");
+                    int d = pil.nextInt();
+                    if (d == 1) {
+                        hitung = true;
+                    } else if (d == 0) {
+                        hitung = false;
+                    }
+                    break;
+                case 4:
+                    hitung = false;
+                	break;
+            }
+        }
+    }
 }
