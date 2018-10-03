@@ -5,7 +5,7 @@ public class TokoBangunan {
     public static void main(String[] args){
         Scanner input = new Scanner(System.in);
 
-        String menu[] = {"Nama Material", "Merk"};
+        String menu[] = {"Nama Material", "Merk", "Daftar Cabang"};
 
         String material[][] = {
                 {"Semen","Conch"},
@@ -22,11 +22,11 @@ public class TokoBangunan {
 
         System.out.println("Toko Bangunan Online Terlengkap Se-Malang Raya");
 
-        System.out.println("Daftar Material : \nNama\t\tMerk\n=================");
+        System.out.println("Daftar Material : \n"+menu[0]+"\t"+menu[1]+"\n====================");
         for (int i=0; i<material.length; i++){
-            System.out.println((i+1)+". "+material[i][0]+"\t"+material[i][1]);
+            System.out.println((i+1)+". "+material[i][0]+"\t\t"+material[i][1]);
         }
-        System.out.println("\nDaftar Cabang : ");
+        System.out.println("\n"+menu[2]);
         for (int i=0; i<cabang.length; i++){
             System.out.println((i+1)+". "+cabang[i]);
         }
