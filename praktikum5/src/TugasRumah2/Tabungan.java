@@ -24,13 +24,13 @@ public class Tabungan {
         }
     }
     public boolean transfer(Tabungan t, int jumlah){
-        if(jumlah <= this.saldo) {
-            ambilUang(jumlah);
-            t.simpanUang(jumlah);
-            return true;
+        if((saldo - jumlah) < 0) {
+            return false;
         }
         else {
-            return false;
+            this.saldo -= jumlah;
+            t.saldo += jumlah;
+            return true;
         }
     }
 }

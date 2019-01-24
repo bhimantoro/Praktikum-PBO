@@ -9,8 +9,8 @@ public class Test {
         Nasabah nasabah2 = new Nasabah("Imam", "PDAM");
         nasabah2.setTabungan(new Tabungan(0));
 
-        System.out.println("Nasabah 1 : "+nasabah1);
-        System.out.println("Nasabah 2 : "+nasabah2);
+        System.out.println("Nasabah 1 : "+nasabah1.toString());
+        System.out.println("Nasabah 2 : "+nasabah2.toString());
 
         tmp = nasabah1.getTabungan().simpanUang(4000);
         System.out.println("\nNasabah 1 Menabung "+tmp);

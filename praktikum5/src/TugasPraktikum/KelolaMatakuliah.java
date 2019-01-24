@@ -27,50 +27,76 @@ public class KelolaMatakuliah {
         );
         mk1.cetak();
         boolean ulang = true;
+        String a = null;
+        int b;
+        String pw = null;
         while(ulang) {
-            System.out.print("Pilih Menu : ");
+            System.out.print("\nPilih Menu : ");
             int pil = input.nextInt();
             switch (pil){
                 case 1:
-                    System.out.println("Kode Makul : "+mk1.cekKodeMakul());
+                    System.out.println("\n\nKode Makul : "+mk1.cekKodeMakul());
                     break;
                 case 2:
-                    mk1.ubahKodeMakul("NINF602", "udin8888");
+                    System.out.print("\n\nMasukkan Kode Makul : ");a = input.next();
+                    System.out.print("Masukkan Password   : ");pw = input.next();
+                    mk1.ubahKodeMakul(a, pw);
                     System.out.println("Diubah Menjadi : "+mk1.cekKodeMakul());
                     break;
                 case 3:
-                    System.out.println("JS Makul"+mk1.cekJSMakul());
+                    System.out.println("\n\nJS Makul : "+mk1.cekJSMakul());
                     break;
                 case 4:
-                    mk1.ubahJSMakul(4, "udin8888");
-                    System.out.println("Diubah Menjadi "+mk1.cekJSMakul());
+                    System.out.print("\n\nMasukkan JS Makul   : ");b = input.nextInt();
+                    System.out.print("Masukkan Password   : ");pw = input.next();
+                    mk1.ubahJSMakul(b, pw);
+                    if (b>5){
+                        System.out.print("Gagal Mengubah");
+                    }
+                    else {
+                        System.out.println("Diubah Menjadi " + mk1.cekJSMakul());
+
+                    }
                     break;
                 case 5:
-                    System.out.println("Dosen Makul : "+mk1.cekDosenMakul());
+                    System.out.println("\n\nDosen Makul : "+mk1.cekDosenMakul());
                     break;
                 case 6:
-                    mk1.ubahDosenMakul("Utomo Pujianto", "udin8888");
+                    System.out.print("\n\nMasukkan Nama Dosen : ");a = input.next();
+                    System.out.print("Masukkan Password   : ");pw = input.next();
+                    mk1.ubahDosenMakul(a, pw);
                     System.out.println("Diubah Menjadi : "+mk1.cekDosenMakul());
                     break;
                 case 7:
-                    System.out.println("Angkatan Mhs"+mk1.cekAngkatanMhs());
+                    System.out.println("\n\nAngkatan Mhs"+mk1.cekAngkatanMhs());
                     break;
                 case 8:
-                    mk1.ubahAngkatanMhs(2015, "udin8888");
+                    System.out.print("\n\nMasukkan Angkatan   : ");b = input.nextInt();
+                    System.out.print("Masukkan Password   : ");pw = input.next();
+                    mk1.ubahAngkatanMhs(b, pw);
                     System.out.println("Diubah Menjadi : "+mk1.cekAngkatanMhs());
                     break;
                 case 9:
-                    System.out.println("Maks Kapasitas : "+mk1.cekMaksKapasitas());
+                    System.out.println("\n\nMaks Kapasitas : "+mk1.cekMaksKapasitas());
                     break;
                 case 10:
-                    mk1.ubahMaksKapasitas(15, "udin8888");
-                    System.out.println("Diubah Menjadi : "+mk1.cekMaksKapasitas());
+                    System.out.print("\n\nMasukkan Maks Kapasitas : ");b = input.nextInt();
+                    System.out.print("Masukkan Password       : ");pw = input.next();
+                    mk1.ubahMaksKapasitas(b, pw);
+                    if (b>60) {
+                        System.out.print("Gagal Mengubah");
+                    }
+                    else {
+                        System.out.println("Diubah Menjadi : " + mk1.cekMaksKapasitas());
+                    }
                     break;
                 case 11:
-                    System.out.println("Jumlah Mhs : "+mk1.cekJumlahMhs());
+                    System.out.println("\n\nJumlah Mhs : "+mk1.cekJumlahMhs());
                     break;
                 case 12:
-                    mk1.tambahMhs("170535629551", "udin8888");
+                    System.out.print("\n\nMasukkan Nim      : ");a = input.next();
+                    System.out.print("Masukkan Password : ");pw = input.next();
+                    mk1.tambahMhs(a, pw);
                     break;
                 case 13:
                     mk1.cetak();
